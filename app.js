@@ -1,17 +1,25 @@
 //Array para almacenar los nombres de tus amigos
 let amigos = []
 
-function agregarAmigos () {
-    const nombre = document.getElementById('amigos')
-    if (nombre.value === '') {
-        alertaVacio()
+function agregarAmigo() {
+    const input = document.getElementById('amigo');
+    const nombre = input.value.trim();
+
+    if (nombre === '') {
+        alert('Por favor, inserte un nombre.');
     } else {
-        amigos.push(nombre.value)
-        nombre.value = ''
-        mostrarAmigos()
+        amigos.push(nombre);
+        input.value = '';
+        mostrarAmigos();
     }
-    console.log (agregarAmigos)
 }
-agregarAmigos = (axel
-    
-)
+
+function mostrarAmigos() {
+    const lista = document.getElementById('listaAmigos');
+    lista.innerHTML = '';
+    amigos.forEach(function(amigo) {
+        const li = document.createElement('li');
+        li.textContent = amigo;
+        lista.appendChild(li);
+    });
+}
