@@ -33,3 +33,17 @@ function actualizarListaAmigos() {
         lista.appendChild(li);
     }
 }
+function sortearAmigo() {
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = ''; // Limpiar resultado anterior
+
+    if (amigos.length === 0) {
+        resultado.innerHTML = '<li>No hay amigos para sortear.</li>';
+        return;
+    }
+
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    const amigoSorteado = amigos[indiceAleatorio];
+
+    resultado.innerHTML = `<li>El amigo secreto es: <strong>${amigoSorteado}</strong></li>`;
+}
