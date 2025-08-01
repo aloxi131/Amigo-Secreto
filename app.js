@@ -41,9 +41,8 @@ function sortearAmigo() {
         resultado.innerHTML = '<li>No hay amigos para sortear.</li>';
         return;
     }
-
     const indiceAleatorio = Math.floor(Math.random() * amigos.length);
     const amigoSorteado = amigos[indiceAleatorio];
-
+// Eliminar el amigo sorteado de la lista para que no se repita
     resultado.innerHTML = `<li>El amigo secreto es: <strong>${amigoSorteado}</strong></li>`;
 }
